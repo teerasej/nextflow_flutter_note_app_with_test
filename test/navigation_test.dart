@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:nextflow_flutter_note_app_with_test/features/new_note/new_note_page.dart';
+import 'package:nextflow_flutter_note_app_with_test/features/note_list/note_list_page.dart';
 
 void main() {
   testWidgets(
@@ -7,7 +9,10 @@ void main() {
     (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: NoteListPage(),
+          routes: {
+            '/': (context) => NoteListPage(),
+            '/new-note': (context) => NewNotePage(),
+          },
         ),
       );
 
