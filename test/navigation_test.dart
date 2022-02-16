@@ -13,7 +13,11 @@ void main() {
 
       expect(find.byType(NoteListPage), findsOneWidget);
 
-      await tester.tap(find.byType(FloatingActionButton));
+      await tester.tap(
+        find.byKey(
+          Key('add_note_button'),
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byType(NewNotePage), findsOneWidget);
