@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class NoteProvider extends ChangeNotifier {
-  void createNote({String message = ''}) {}
+  List<String> _notes = [];
+
+  void createNote({String message = ''}) {
+    _notes.add(message);
+    notifyListeners();
+  }
 
   NoteProvider();
 }
